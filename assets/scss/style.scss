@@ -1,0 +1,32 @@
+@import './reset.scss';
+@import './colors.scss';
+@import './variables.scss';
+@import './font.scss';
+
+
+
+
+.cordo h1 {
+
+    border: solid;
+    padding: 80px;
+
+    h1 {
+        text-align: center;
+        color: $bleu;
+        font-family: 'Bookman Old Style', serif;
+        font-size: 32px;
+    }
+}
+
+.hea {
+    border: solid;
+    padding: 80px;
+
+    h1 {
+        text-align: center;
+        color: $bleu;
+        font-family: 'Bookman Old Style', serif;
+        font-size: 32px;
+    }
+}

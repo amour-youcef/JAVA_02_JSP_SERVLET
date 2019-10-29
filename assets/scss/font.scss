@@ -1,0 +1,30 @@
+$primaryColor : purple;
+
+
+
+header {
+    padding: 15px
+        /* + 50px*/
+    ;
+    background-color: $primaryColor;
+}
+
+footer {
+    margin-top: 100px;
+    padding: 20px;
+    background-color: $primaryColor;
+
+    span {
+        color: white;
+    }
+}
+
+@mixin flex($justify) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+
+header ul {
+    @include flex(space-between);
+}
