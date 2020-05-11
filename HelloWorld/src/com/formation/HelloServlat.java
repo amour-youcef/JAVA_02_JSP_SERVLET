@@ -27,7 +27,7 @@ public class HelloServlat extends HttpServlet {
 		out.println("<H4>Hello World</H4>");
 		out.println("</BODY></TML>");
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
 	/**
