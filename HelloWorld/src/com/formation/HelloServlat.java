@@ -1,6 +1,8 @@
 package com.formation;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +20,13 @@ public class HelloServlat extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<HTML><BODY>");
+		out.println("<H4>Hello World</H4>");
+		out.println("</BODY></TML>");
+
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
