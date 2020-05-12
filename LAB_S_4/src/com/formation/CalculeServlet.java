@@ -13,67 +13,57 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CalculeServlet
  */
-@WebServlet("/calcule")
+@WebServlet("/Calcule")
 public class CalculeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		// recuperation les param
-
 		String num1str = request.getParameter("num1");
 		String num2str = request.getParameter("num2");
 		String opstr = request.getParameter("op");
-
-		// conversion
-
+		
+		
+		//conversion
+		
 		int num1 = Integer.parseInt(num1str);
 		int num2 = Integer.parseInt(num2str);
-
-		// calcul
-
-		int result = 0;
-
+		
+		//calcul
+		int result = 0  ;
+		
 		switch (opstr) {
-
-		case "plus":
-			result = num1 + num2;
+		
+		case "plus": result = num1+num2;
+			
 			break;
-
-		case "div":
-			result = num1 / num2;
-			break;
-		case "mult":
-			result = num1 * num2;
-			break;
-		case "sub":
-			result = num1 - num2;
-			break;
+		case "div": result = num1/num2;
+		
+		break;
+		case "mult": result = num1*num2;
+		
+		break;
+		case "sub": result = num1-num2;
+		
+		break;
 		default:
 			break;
 		}
-		// Stockage de result
+	 //stockage de result
 		request.setAttribute("res", result);
 		//redirection vers la page result.jsp
+		RequestDispatcher disp = request.getRequestDispatcher("result.jsp");
+		disp.forward(request, response);
 		
-//		RequestDispatcher disp = request.getRequestDispatcher("result.jsp");
+//		//afficher
+//		response.setContentType("text/html");
+//		PrintWriter out = response.getWriter();
+//		out.print("result " +result);
 		
-		//afficher
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.print("result " +result);
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub

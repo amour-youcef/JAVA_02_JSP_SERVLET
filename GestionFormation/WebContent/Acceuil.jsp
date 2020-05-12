@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Acceuil</title>
 </head>
 <body>
-
-
-<%=request.getAttribute("res")%>
-
+<h1>Vous êtes sur votre page personnelle.</h1>
 </body>
 </html>
