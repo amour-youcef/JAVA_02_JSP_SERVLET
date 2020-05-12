@@ -1,6 +1,7 @@
 package com.formation;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -61,9 +62,12 @@ public class CalculeServlet extends HttpServlet {
 		request.setAttribute("res", result);
 		//redirection vers la page result.jsp
 		
-		RequestDispatcher disp = request.getRequestDispatcher("result.jsp");
+//		RequestDispatcher disp = request.getRequestDispatcher("result.jsp");
 		
-		
+		//afficher
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.print("result " +result);
 	}
 
 	/**
