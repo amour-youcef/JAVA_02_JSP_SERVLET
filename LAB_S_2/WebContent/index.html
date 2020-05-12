@@ -2,9 +2,30 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>WEB</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>Hello Word___ op </h1>
+
+	<a href="param?nom=toto&prenom=titi"> lien </a>
+	<br />
+
+	<form action="param" method="post">
+		<table>
+
+			<tr>
+				<td>nom:</td>
+				<td><input type="text" name="nom"></td>
+			</tr>
+			<tr>
+				<td>prenom</td>
+				<td><input type=" password" name="prenom"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="ok"></td>
+			</tr>
+			<input type="hidden" name="hide" value="123" />
+
+		</table>
+	</form>
 </body>
 </html>
