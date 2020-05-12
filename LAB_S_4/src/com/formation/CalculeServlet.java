@@ -1,6 +1,8 @@
 package com.formation;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,7 +44,7 @@ public class CalculeServlet extends HttpServlet {
 		case "plus":
 			result = num1 + num2;
 			break;
-			
+
 		case "div":
 			result = num1 / num2;
 			break;
@@ -53,9 +55,15 @@ public class CalculeServlet extends HttpServlet {
 			result = num1 - num2;
 			break;
 		default:
-			throw new IllegalArgumentException("Unexpected value: " + opstr);
+			break;
 		}
-
+		// Stockage de result
+		request.setAttribute("res", result);
+		//redirection vers la page result.jsp
+		
+		RequestDispatcher disp = request.getRequestDispatcher("result.jsp");
+		
+		
 	}
 
 	/**
